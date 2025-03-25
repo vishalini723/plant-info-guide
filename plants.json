@@ -1,0 +1,18 @@
+{
+    "Tulsi": {
+      "category": "Ayurveda",
+      "benefits": ["Boosts immunity", "Relieves cough", "Reduces stress"],
+      "image": "tulsi.png"
+    },
+    "Neem": {
+      "category": "Ayurveda",
+      "benefits": ["Purifies blood", "Improves skin", "Promotes oral health"],
+      "image": "neem.png"
+    },
+    "Aloe Vera": {
+      "category": "Naturopathy",
+      "benefits": ["Soothes skin", "Aids digestion", "Heals wounds"],
+      "image": "aloevera.png"
+    }
+  }
+  

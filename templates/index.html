@@ -1,0 +1,56 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Medicinal Plant Explorer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Medicinal Plant Explorer 🌱</h1>
+        <select id="plantDropdown">
+            <option value="" disabled selected>Select a plant</option>
+            {% for plant in plants %}
+            <option value="{{ plant }}">{{ plant }}</option>
+            {% endfor %}
+        </select>
+        <button onclick="showDetails()">Show Details</button>
+        
+        <div id="plantDetails">
+            <img id="plantImage" src="/static/images/default.png" alt="plants">
+            <h2 id="plantCategory"></h2>
+            <p id="plantBenefits"></p>
+            <p id="plantPrecautions"></p>
+        </div>
+    </div>
+
+    <script>
+        async function showDetails() {
+            const selectedPlant = document.getElementById('plantDropdown').value;
+            if (!selectedPlant) return alert('Please select a plant!');
+
+            const response = await fetch('/get_details', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ plant: selectedPlant })
+            });
+
+            const data = await response.json();
+            if (data.error) return alert(data.error);
+
+            document.getElementById('plantImage').src = data.image;
+            document.getElementById('plantCategory').innerHTML = `🌱 Category: <b>${data.category}</b>`;
+            document.getElementById('plantBenefits').innerHTML = `✅ Benefits:<br>- ${data.benefits.join('<br>- ')}`;
+            document.getElementById('plantPrecautions').innerHTML = `⚠️ Precautions:<br>- ${data.precautions.join('<br>- ')}`;
+        }
+    </script>
+</body>
+</html>
+
+

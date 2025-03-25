@@ -1,0 +1,105 @@
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6ffe6;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#plantImage img {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#plantDetails {
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+} */
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6ffe6;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+select, button {
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#plantDetails {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#plantImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h2, p {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    select, button {
+        width: 80%;
+    }
+}
